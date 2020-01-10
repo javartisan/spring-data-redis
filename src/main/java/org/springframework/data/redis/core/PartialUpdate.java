@@ -24,6 +24,9 @@ import org.springframework.util.Assert;
 import org.springframework.util.ClassUtils;
 
 /**
+ *
+ * Spring data redis 里面实现允许更新缓存过期时间的工具类，目前好像无法与Spring 缓存注解结合使用，需要确认
+ *
  * {@link PartialUpdate} allows to issue individual property updates without the need of rewriting the whole entity. It
  * allows to define {@literal set}, {@literal delete} actions on existing objects while taking care of updating
  * potential expiration times of the entity itself as well as index structures.
@@ -37,6 +40,9 @@ public class PartialUpdate<T> {
 	private final Object id;
 	private final Class<T> target;
 	private final @Nullable T value;
+	/**
+	 * 是否允许更新缓存失效时间
+	 */
 	private boolean refreshTtl = false;
 
 	private final List<PropertyUpdate> propertyUpdates = new ArrayList<>();

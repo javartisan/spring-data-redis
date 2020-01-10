@@ -25,6 +25,7 @@ import java.util.concurrent.TimeUnit;
 import org.springframework.data.annotation.ReadOnlyProperty;
 
 /**
+ *
  * {@link TimeToLive} marks a single numeric property on aggregate root to be used for setting expirations in Redis. The
  * annotated property supersedes any other timeout configuration.
  *
